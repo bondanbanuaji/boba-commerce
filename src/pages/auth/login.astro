@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { LoginForm } from '@components/react/auth/LoginForm';
+---
+
+<BaseLayout title="Sign In | Boba Commerce">
+  <div class="min-h-[60vh] flex flex-col items-center justify-center py-12">
+    <div class="w-full max-w-md bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+      <div class="text-center mb-8">
+        <h1 class="text-2xl font-display font-bold text-gray-900">Welcome Back</h1>
+        <p class="text-sm text-gray-500 mt-2">Sign in to your account to continue</p>
+      </div>
+
+      <LoginForm client:load />
+
+      <div class="mt-6 text-center text-sm text-gray-600">
+        Don't have an account?{' '}
+        <a href="/auth/register" class="text-boba-primary font-medium hover:underline">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

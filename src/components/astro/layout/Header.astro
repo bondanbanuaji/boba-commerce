@@ -1,0 +1,51 @@
+---
+import { CartIcon } from '@components/react/cart/CartIcon';
+import { CartDrawer } from '@components/react/cart/CartDrawer';
+import { User } from 'lucide-react';
+
+const navItems = [
+  { label: 'Shop', href: '/products' },
+  { label: 'About', href: '/about' },
+];
+---
+
+<header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 border-b border-boba-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      {/* Logo */}
+      <div class="flex-shrink-0">
+        <a href="/" class="flex items-center gap-2">
+           <span class="text-2xl font-display font-bold text-boba-primary-dark tracking-tight">
+             Boba<span class="text-boba-primary">Commerce</span>
+           </span>
+        </a>
+      </div>
+
+      {/* Desktop Nav */}
+      <nav class="hidden md:flex items-center gap-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="text-sm font-medium text-gray-700 hover:text-boba-primary transition-colors"
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+
+      {/* Actions */}
+      <div class="flex items-center gap-4">
+        {/* User Menu - Static for now, can be upgraded to island */}
+        <a href="/auth/login" class="p-2 text-gray-700 hover:text-boba-primary transition-colors">
+          <User className="h-5 w-5" />
+        </a>
+        
+        {/* Cart */}
+        <CartIcon client:load />
+      </div>
+    </div>
+  </div>
+</header>
+
+<CartDrawer client:load />

@@ -1,0 +1,41 @@
+---
+import { AddToCartButton } from '@components/react/cart/AddToCartButton';
+import type { Product } from '@/types';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+---
+
+<article class="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-boba transition-all duration-300 border border-transparent hover:border-boba-100">
+  {/* Image */}
+  <div class="aspect-square bg-boba-50 overflow-hidden relative">
+    <img 
+      src={product.image} 
+      alt={product.name}
+      class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+      loading="lazy"
+    />
+    
+    {/* Overlay Actions */}
+    <div class="absolute bottom-4 right-4 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+      <AddToCartButton client:idle product={product} variant="icon" />
+    </div>
+  </div>
+
+  {/* Content */}
+  <div class="p-4">
+    <h3 class="font-display font-bold text-gray-900 group-hover:text-boba-primary transition-colors">
+      <a href={`/products/${product.slug}`}>
+        <span class="absolute inset-0"></span>
+        {product.name}
+      </a>
+    </h3>
+    <p class="mt-1 text-sm text-gray-500 line-clamp-2">{product.description}</p>
+    <div class="mt-3 flex items-center justify-between">
+      <p class="text-lg font-bold text-boba-primary-dark">${product.price.toFixed(2)}</p>
+    </div>
+  </div>
+</article>
