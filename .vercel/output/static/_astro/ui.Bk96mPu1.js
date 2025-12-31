@@ -1,0 +1,1 @@
+import{a as e}from"./index.CASokwIO.js";const s=e([]);function i(o){const t=crypto.randomUUID(),a={...o,id:t};return s.set([...s.get(),a]),setTimeout(()=>{n(t)},o.duration??5e3),t}function n(o){s.set(s.get().filter(t=>t.id!==o))}export{s as $,i as a,n as r};

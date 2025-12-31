@@ -1,0 +1,53 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import ProductCard from '@components/astro/product/ProductCard.astro';
+import { getProducts } from '@lib/db/queries/products';
+
+// Get category from query param (in SSR mode)
+const category = Astro.url.searchParams.get('category') || undefined;
+const products = await getProducts(category);
+
+const categories = [
+  { label: 'All', value: undefined },
+  { label: 'Tea', value: 'tea' },
+  { label: 'Toppings', value: 'toppings' },
+  { label: 'Equipment', value: 'equipment' },
+  { label: 'Kits', value: 'kits' },
+];
+---
+
+<BaseLayout title="Shop | Boba Commerce">
+  <div class="mb-8">
+    <h1 class="text-4xl font-display font-bold text-gray-900 mb-4">Shop Best Sellers</h1>
+    <p class="text-gray-600">Explore our premium selection of boba tea supplies.</p>
+  </div>
+
+  {/* Filters */}
+  <div class="flex gap-2 mb-8 overflow-x-auto pb-2">
+    {categories.map(cat => (
+      <a 
+        href={cat.value ? `/products?category=${cat.value}` : '/products'}
+        class={`px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap
+          ${category === cat.value 
+            ? 'bg-boba-primary text-white' 
+            : 'bg-white text-gray-600 hover:bg-gray-100'}`}
+      >
+        {cat.label}
+      </a>
+    ))}
+  </div>
+
+  {/* Product Grid */}
+  {products.length > 0 ? (
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {products.map(product => (
+        <ProductCard product={product} />
+      ))}
+    </div>
+  ) : (
+    <div class="text-center py-24 text-gray-500">
+      <p class="text-xl">No products found in this category.</p>
+      <a href="/products" class="text-boba-primary hover:underline mt-2 inline-block">Clear filters</a>
+    </div>
+  )}
+</BaseLayout>

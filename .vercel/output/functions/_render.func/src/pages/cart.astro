@@ -1,0 +1,20 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { CartSummary } from '@components/react/cart/CartSummary';
+import { Button } from '@components/react/ui/Button';
+import { ShoppingBag } from 'lucide-react';
+
+// We can technically use the CartDrawer logic or reuse components.
+// Ideally, we create a non-modal CartSummary component for this page.
+---
+
+<BaseLayout title="Cart | Boba Commerce">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-display font-bold text-gray-900 mb-8">Shopping Cart</h1>
+    
+    {/* Cart Content - Client Island */}
+    {/* We reuse the CartSummary logic but expanded for a full page */}
+    <CartSummary client:only="react" />
+
+  </div>
+</BaseLayout>

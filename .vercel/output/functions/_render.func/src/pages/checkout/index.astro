@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { CheckoutForm } from '@components/react/checkout/CheckoutForm';
+---
+
+<BaseLayout title="Checkout | Boba Commerce">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-display font-bold text-gray-900 mb-8 text-center">Checkout</h1>
+    <CheckoutForm client:only="react" />
+  </div>
+</BaseLayout>

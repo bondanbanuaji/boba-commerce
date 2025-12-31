@@ -67,7 +67,7 @@
 
     /* Boba Commerce Specifics */
     body {
-        @apply bg-boba-50 text-boba-pearl font-sans antialiased;
+        @apply bg-boba-primary-50 text-boba-pearl font-sans antialiased;
     }
 
     h1,

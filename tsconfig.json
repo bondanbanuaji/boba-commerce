@@ -25,6 +25,9 @@
       ],
       "@actions/*": [
         "src/actions/*"
+      ],
+      "@styles/*": [
+        "src/styles/*"
       ]
     }
   }

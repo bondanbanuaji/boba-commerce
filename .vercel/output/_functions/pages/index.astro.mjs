@@ -1,0 +1,69 @@
+/* empty css                                 */
+import { e as createComponent, k as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../chunks/astro/server_BOT567rp.mjs';
+import 'piccolore';
+import { $ as $$BaseLayout, B as Button } from '../chunks/BaseLayout_QRpTJ7ty.mjs';
+import { $ as $$ProductCard } from '../chunks/ProductCard_BEM4EqSH.mjs';
+export { renderers } from '../renderers.mjs';
+
+const $$Index = createComponent(($$result, $$props, $$slots) => {
+  const featuredProducts = [
+    {
+      id: "1",
+      name: "Classic Milk Tea Kit",
+      slug: "classic-milk-tea-kit",
+      description: "Everything you need to make authentic milk tea at home.",
+      price: 24.99,
+      image: "https://images.unsplash.com/photo-1558160074-4d7d8bdf4256?auto=format&fit=crop&q=80&w=800",
+      category: "kits"
+    },
+    {
+      id: "2",
+      name: "Brown Sugar Boba",
+      slug: "brown-sugar-boba",
+      description: "Premium slow-cooked tapioca pearls in brown sugar syrup.",
+      price: 12.5,
+      image: "https://images.unsplash.com/photo-1579888944880-d98341245702?auto=format&fit=crop&q=80&w=800",
+      category: "toppings"
+    },
+    {
+      id: "3",
+      name: "Taro Powder",
+      slug: "taro-powder",
+      description: "Rich and creamy premium taro flavor powder.",
+      price: 18,
+      image: "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&q=80&w=800",
+      category: "tea"
+    },
+    {
+      id: "4",
+      name: "Wide Boba Straws",
+      slug: "wide-boba-straws",
+      description: "Reusable stainless steel straws perfect for pearls.",
+      price: 8.99,
+      image: "https://images.unsplash.com/photo-1589367920969-ab8e050bbb04?auto=format&fit=crop&q=80&w=800",
+      category: "equipment"
+    }
+  ];
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "Boba Commerce | Premium Tea Supplies" }, { "default": ($$result2) => renderTemplate`${maybeRenderHead()}<section class="relative bg-boba-primary-900 rounded-3xl overflow-hidden mb-16"> <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595981299955-d91d1e4c7608?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-40"></div> <div class="relative z-10 px-8 py-24 md:py-32 flex flex-col items-center text-center"> <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-6 animate-slide-up">
+Brew Happiness <br> <span class="text-boba-cream">At Home</span> </h1> <p class="text-lg md:text-xl text-boba-100 max-w-2xl mb-8 animate-slide-up" style="animation-delay: 100ms">
+Premium ingredients, authentic recipes, and professional equipment delivered to your doorstep.
+</p> <div class="flex gap-4 animate-slide-up" style="animation-delay: 200ms"> <a href="/products"> ${renderComponent($$result2, "Button", Button, { "size": "lg", "className": "bg-boba-cream text-boba-primary hover:bg-white" }, { "default": ($$result3) => renderTemplate`
+Shop Now
+` })} </a> <a href="/about"> ${renderComponent($$result2, "Button", Button, { "size": "lg", "variant": "secondary", "className": "bg-transparent border-white text-white hover:bg-white/10" }, { "default": ($$result3) => renderTemplate`
+Our Story
+` })} </a> </div> </div> </section> <section class="mb-16"> <div class="flex items-center justify-between mb-8"> <h2 class="text-3xl font-display font-bold">New Arrivals</h2> <a href="/products" class="text-boba-primary font-medium hover:underline">View all</a> </div> <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> ${featuredProducts.map((product) => renderTemplate`${renderComponent($$result2, "ProductCard", $$ProductCard, { "product": product })}`)} </div> </section> <section class="mb-16"> <h2 class="text-3xl font-display font-bold mb-8">Browse by Category</h2> <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer"> <img src="https://images.unsplash.com/photo-1571934811356-5cc554bc5d21?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> <div class="absolute inset-0 bg-black/40 flex items-center justify-center"> <h3 class="text-2xl font-bold text-white">Tea Leaves</h3> </div> </div> <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer"> <img src="https://images.unsplash.com/photo-1626202167439-d8be2939dd5f?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> <div class="absolute inset-0 bg-black/40 flex items-center justify-center"> <h3 class="text-2xl font-bold text-white">Toppings</h3> </div> </div> <div class="relative h-64 rounded-2xl overflow-hidden group cursor-pointer"> <img src="https://images.unsplash.com/photo-1582239459203-aa6a4276722d?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> <div class="absolute inset-0 bg-black/40 flex items-center justify-center"> <h3 class="text-2xl font-bold text-white">Equipment</h3> </div> </div> </div> </section> ` })}`;
+}, "/media/boba/DATA/Project/js project/react/Astro/boba-commerce/src/pages/index.astro", void 0);
+
+const $$file = "/media/boba/DATA/Project/js project/react/Astro/boba-commerce/src/pages/index.astro";
+const $$url = "";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$Index,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
